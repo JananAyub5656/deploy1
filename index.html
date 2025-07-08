@@ -2,676 +2,397 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Happy Birthday Iqra 🎉</title>
-    <link rel="preload"
-        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap" as="style"
-        onload="this.onload=null;this.rel='stylesheet'" />
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap"
-        rel="stylesheet" />
-    <style>
-        :root {
-            --bg-gradient: radial-gradient(circle at top left, #1a001a, #330033);
-            --text-color: #ff66cc;
-            --shadow-color: #ff99cc;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: var(--bg-gradient);
-            color: var(--text-color);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 2rem;
-            overflow-y: auto;
-            overflow-x: hidden;
-            position: relative;
-            transition: background 1s ease, color 0.5s ease;
-        }
-
-        html {
-            height: 100%;
-        }
-
-        /* Starry night background container */
-        .starry-night {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: transparent;
-            pointer-events: none;
-            overflow: hidden;
-            z-index: -1;
-        }
-
-        /* Base star styles */
-        .star {
-            position: absolute;
-            border-radius: 50%;
-            background: white;
-            opacity: 0.8;
-            filter: drop-shadow(0 0 1px white);
-            animation: twinkle 3s infinite ease-in-out alternate;
-        }
-
-        .star.small {
-            width: 1.5px;
-            height: 1.5px;
-            animation-duration: 2s;
-        }
-
-        .star.medium {
-            width: 2.5px;
-            height: 2.5px;
-            animation-duration: 3.5s;
-        }
-
-        .star.large {
-            width: 4px;
-            height: 4px;
-            animation-duration: 4.5s;
-        }
-
-        /* Twinkle animation */
-        @keyframes twinkle {
-            0% {
-                opacity: 0.3;
-                transform: scale(1);
-            }
-
-            50% {
-                opacity: 1;
-                transform: scale(1.2);
-            }
-
-            100% {
-                opacity: 0.3;
-                transform: scale(1);
-            }
-        }
-
-        /* Slow drifting animations */
-        @keyframes driftX {
-
-            0%,
-            100% {
-                transform: translateX(0);
-            }
-
-            50% {
-                transform: translateX(5px);
-            }
-        }
-
-        @keyframes driftY {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(3px);
-            }
-        }
-
-        .drift1 {
-            animation: driftX 8s ease-in-out infinite alternate;
-        }
-
-        .drift2 {
-            animation: driftY 7s ease-in-out infinite alternate;
-        }
-
-        .drift3 {
-            animation: driftX 6s ease-in-out infinite alternate reverse;
-        }
-
-        .drift4 {
-            animation: driftY 9s ease-in-out infinite alternate reverse;
-        }
-
-        /* Shooting star base style */
-        .shooting-star {
-            position: fixed;
-            width: 3px;
-            height: 100px;
-            background: linear-gradient(45deg, white, rgba(255, 255, 255, 0));
-            border-radius: 50%;
-            filter: drop-shadow(0 0 8px #fff);
-            transform: rotate(45deg);
-            opacity: 0;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        /* Shooting star 1 animation */
-        @keyframes shooting1 {
-            0% {
-                opacity: 0;
-                transform: translateX(0) translateY(0) rotate(45deg);
-            }
-
-            10% {
-                opacity: 1;
-            }
-
-            80% {
-                opacity: 1;
-                transform: translateX(-120vw) translateY(120vh) rotate(45deg);
-            }
-
-            100% {
-                opacity: 0;
-                transform: translateX(-120vw) translateY(120vh) rotate(45deg);
-            }
-        }
-
-        /* Shooting star 2 animation */
-        @keyframes shooting2 {
-            0% {
-                opacity: 0;
-                transform: translateX(0) translateY(0) rotate(45deg);
-            }
-
-            10% {
-                opacity: 1;
-            }
-
-            80% {
-                opacity: 1;
-                transform: translateX(-110vw) translateY(110vh) rotate(45deg);
-            }
-
-            100% {
-                opacity: 0;
-                transform: translateX(-110vw) translateY(110vh) rotate(45deg);
-            }
-        }
-
-        /* Splash screen */
-        .splash {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #0f001a;
-            color: #ff66cc;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            z-index: 1000;
-            animation: fadeSplash 3s forwards;
-        }
-
-        @keyframes fadeSplash {
-            0% {
-                opacity: 1;
-            }
-
-            80% {
-                opacity: 1;
-            }
-
-            100% {
-                opacity: 0;
-                visibility: hidden;
-            }
-        }
-
-        h1 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 3.5rem;
-            text-shadow: 0 0 10px var(--text-color), 0 0 20px var(--shadow-color);
-            margin-bottom: 1rem;
-            animation: fadeInDown 1.5s ease forwards;
-            position: relative;
-            z-index: 1;
-        }
-
-        p {
-            font-size: 1.3rem;
-            margin: 1.5rem 0;
-            max-width: 800px;
-            line-height: 1.8;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--text-color);
-            border-radius: 20px;
-            padding: 1.5rem 2rem;
-            box-shadow: 0 0 20px var(--shadow-color);
-            animation: fadeInUp 2s ease forwards;
-            color: #fff;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Animated text box (p) in main-content */
-        .main-content p {
-            opacity: 0;
-            transform: translateY(40px) scale(0.98);
-            animation: pFadeInBox 1.5s 0.3s cubic-bezier(0.6, 0.2, 0.2, 1) forwards;
-        }
-
-        @keyframes pFadeInBox {
-            from {
-                opacity: 0;
-                transform: translateY(40px) scale(0.98);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        /* Animate main-content container */
-        .main-content {
-            opacity: 0;
-            transform: scale(0.97) translateY(40px);
-            animation: mainContentFadeIn 1.2s cubic-bezier(0.6, 0.2, 0.2, 1) forwards;
-        }
-
-        @keyframes mainContentFadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.97) translateY(40px);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-            }
-        }
-
-        /* Animate h1 in main-content */
-        .main-content h1 {
-            opacity: 0;
-            transform: translateY(-40px) scale(0.95);
-            animation: h1FadeIn 1.2s 0.1s cubic-bezier(0.6, 0.2, 0.2, 1) forwards, h1Glow 2.5s 2s ease-in-out infinite alternate;
-        }
-
-        @keyframes h1FadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-40px) scale(0.95);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        @keyframes h1Glow {
-            from {
-                text-shadow: 0 0 10px var(--text-color), 0 0 20px var(--shadow-color), 0 0 30px #fff;
-            }
-
-            to {
-                text-shadow: 0 0 30px var(--text-color), 0 0 60px var(--shadow-color), 0 0 80px #fff;
-            }
-        }
-
-        /* Animate theme buttons */
-        .main-content .theme-buttons {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: btnFadeIn 1.3s 0.7s cubic-bezier(0.6, 0.2, 0.2, 1) forwards;
-        }
-
-        @keyframes btnFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Animate footer */
-        .main-content .footer {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: footerFadeIn 1.3s 1.1s cubic-bezier(0.6, 0.2, 0.2, 1) forwards;
-        }
-
-        @keyframes footerFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .footer {
-            margin-top: 2rem;
-            font-size: 0.9rem;
-            color: #ccc;
-            background: rgba(0, 0, 0, 0.3);
-            padding: 0.5rem 1.5rem;
-            border-radius: 12px;
-            animation: fadeInUp 2.5s ease forwards;
-            position: relative;
-            z-index: 1;
-        }
-
-        .theme-buttons {
-            margin-top: 2.5rem;
-            display: flex;
-            justify-content: center;
-            gap: 1.2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .theme-buttons button {
-            margin: 0;
-            padding: 0.7rem 1.7rem;
-            background: linear-gradient(90deg, var(--text-color) 0%, var(--shadow-color) 100%);
-            border: none;
-            border-radius: 30px;
-            color: #fff;
-            font-size: 1.1rem;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 500;
-            letter-spacing: 1px;
-            box-shadow: 0 1px 6px 0 var(--shadow-color), 0 1px 0 0 #fff2 inset;
-            cursor: pointer;
-            transition: background 0.2s, color 0.2s, transform 0.15s;
-            outline: none;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .theme-buttons button:hover {
-            color: var(--text-color);
-            background: #fff;
-            transform: translateY(-2px) scale(1.03);
-            box-shadow: 0 2px 12px 0 var(--shadow-color), 0 1px 0 0 #fff2 inset;
-        }
-
-        .theme-buttons button:active {
-            transform: scale(0.98);
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Main content entrance animation (faster, no delay) */
-        .main-content {
-            opacity: 0;
-            transform: translateY(40px) scale(0.98);
-            animation: mainFadeIn 0.8s cubic-bezier(0.6, 0.2, 0.2, 1) forwards;
-        }
-
-        .main-content h1 {
-            opacity: 0;
-            transform: translateY(-40px) scale(0.95);
-            animation: h1FadeIn 0.8s cubic-bezier(0.6, 0.2, 0.2, 1) forwards, h1Glow 2.5s 2s ease-in-out infinite alternate;
-        }
-
-        .main-content p {
-            opacity: 0;
-            transform: translateY(40px) scale(0.98);
-            animation: pFadeIn 1s 0.2s cubic-bezier(0.6, 0.2, 0.2, 1) forwards;
-        }
-
-        @keyframes mainFadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        .main-content h1 {
-            opacity: 0;
-            transform: translateY(-40px) scale(0.95);
-            animation: h1FadeIn 0.8s cubic-bezier(0.6, 0.2, 0.2, 1) forwards, h1Glow 2.5s 2s ease-in-out infinite alternate;
-        }
-
-        @keyframes h1FadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        @keyframes h1Glow {
-            from {
-                text-shadow: 0 0 10px var(--text-color), 0 0 20px var(--shadow-color), 0 0 30px #fff;
-            }
-
-            to {
-                text-shadow: 0 0 30px var(--text-color), 0 0 60px var(--shadow-color), 0 0 80px #fff;
-            }
-        }
-
-        .main-content p {
-            opacity: 0;
-            transform: translateY(40px) scale(0.98);
-            animation: pFadeIn 1s 0.2s cubic-bezier(0.6, 0.2, 0.2, 1) forwards;
-        }
-
-        @keyframes pFadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        .main-content .theme-buttons {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: btnFadeIn 2.2s 3.7s cubic-bezier(0.6, 0.2, 0.2, 1) forwards;
-        }
-
-        @keyframes btnFadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .main-content .footer {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: footerFadeIn 2.2s 4.7s cubic-bezier(0.6, 0.2, 0.2, 1) forwards;
-        }
-
-        @keyframes footerFadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @media (max-width: 600px) {
-            body {
-                padding: 0.7rem;
-            }
-
-            .main-content {
-                padding: 1.1rem 0.7rem 1.1rem 0.7rem;
-                max-width: 98vw;
-            }
-
-            h1 {
-                font-size: 2.1rem;
-            }
-
-            p {
-                font-size: 1rem;
-                padding: 1rem 0.7rem;
-            }
-
-            .theme-buttons button {
-                padding: 0.5rem 0.8rem;
-                font-size: 0.95rem;
-            }
-        }
-
-        .main-content {
-            will-change: opacity, transform;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Iqra 🎉</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg-gradient: radial-gradient(circle at top left, #1a001a, #330033);
+      --text-color: #ff66cc;
+      --shadow-color: #ff99cc;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text-color);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      overflow: hidden;
+      position: relative;
+      transition: color 0.5s ease;
+      touch-action: manipulation;
+      -webkit-user-select: none;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      will-change: transform, filter;
+      backface-visibility: hidden;
+      contain: layout style;
+    }
+
+    /* Crossfade background for smooth theme transitions */
+    .bg-fade {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+      transition: opacity 0.9s cubic-bezier(.7,0,.3,1);
+      opacity: 0;
+      background: var(--bg-gradient);
+    }
+    .bg-fade.active {
+      opacity: 1;
+    }
+
+    .splash {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #0f001a;
+      color: #ff66cc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      z-index: 1000;
+      animation: fadeSplash 3s forwards;
+    }
+
+    @keyframes fadeSplash {
+      0% {
+        opacity: 1;
+      }
+
+      80% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5rem;
+      text-shadow:
+        0 0 10px var(--text-color),
+        0 0 20px var(--shadow-color),
+        2px 4px 0 #0006,
+        0 0 40px var(--text-color),
+        0 0 80px var(--shadow-color),
+        0 2px 8px #0008;
+      margin-bottom: 1rem;
+      animation: fadeInDown 1.5s ease forwards;
+    }
+
+    p {
+      font-size: 1.3rem;
+      margin: 1.5rem 0;
+      max-width: 800px;
+      line-height: 1.8;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--text-color);
+      border-radius: 20px;
+      padding: 1.5rem 2rem;
+      box-shadow: 0 0 20px var(--shadow-color), 0 8px 32px 0 #0007;
+      animation: fadeInUp 2s ease forwards;
+      color: #fff;
+      text-shadow:
+        0 0 6px var(--text-color),
+        0 0 16px var(--shadow-color),
+        1.5px 3px 0 #0005,
+        0 0 32px var(--text-color),
+        0 1.5px 6px #0007;
+    }
+
+    .footer {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #ccc;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 0.5rem 1.5rem;
+      border-radius: 12px;
+      animation: fadeInUp 2.5s ease forwards;
+    }
+
+    .theme-buttons {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+    }
+
+    .theme-buttons button {
+      margin: 0;
+      padding: 0.7rem 1.7rem;
+      background: linear-gradient(90deg, var(--text-color) 0%, var(--shadow-color) 100%);
+      border: none;
+      border-radius: 30px;
+      color: #fff;
+      font-size: 1.1rem;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 16px 0 var(--shadow-color), 0 1.5px 0 0 #fff2 inset, 0 6px 24px 0 #0003;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s, filter 0.2s;
+      outline: none;
+      position: relative;
+      overflow: hidden;
+      filter: drop-shadow(0 2px 8px var(--shadow-color)) drop-shadow(0 0 2px #fff8);
+      will-change: transform, box-shadow, filter;
+      user-select: none;
+      touch-action: manipulation;
+      pointer-events: auto;
+      min-height: 48px;
+      min-width: 120px;
+      tap-highlight-color: transparent;
+      -webkit-tap-highlight-color: transparent;
+      /* Remove duplicate tap-highlight-color property */
+      /* Remove duplicate touch-action property */
+      /* Remove non-standard tap-highlight-color */
+      /* Remove duplicate user-select property */
+      /* Remove duplicate pointer-events property */
+      /* Remove duplicate min-height/min-width if present */
+      /* Remove duplicate font-variant-ligatures/font-feature-settings if present */
+    }
+
+    .theme-buttons button::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.4s, height 0.4s;
+      z-index: 0;
+    }
+
+    .theme-buttons button:hover::before {
+      width: 220%;
+      height: 500%;
+    }
+
+    .theme-buttons button:hover {
+      color: var(--text-color);
+      background: #fff;
+      transform: translateY(-4px) scale(1.07) rotate(-2deg);
+      box-shadow: 0 4px 32px 0 var(--shadow-color), 0 2px 0 0 #fff2 inset;
+    }
+
+    .theme-buttons button:focus-visible {
+      outline: 2.5px solid var(--text-color);
+      outline-offset: 2px;
+      box-shadow: 0 0 0 4px var(--shadow-color), 0 2px 16px 0 var(--shadow-color);
+      filter: brightness(1.1) drop-shadow(0 0 8px var(--text-color));
+      transition: none;
+    }
+
+    .theme-buttons button:active {
+      transform: scale(0.97) translateY(1.5px);
+      filter: brightness(0.97) drop-shadow(0 0 8px var(--shadow-color));
+      transition: none;
+    }
+
+    .theme-buttons button:focus:not(:focus-visible) {
+      outline: none;
+    }
+
+    /* Sparkling star background - optimized for mobile */
+    .starry-bg-star {
+      position: fixed;
+      border-radius: 50%;
+      background: white;
+      opacity: 0.6;
+      pointer-events: none;
+      z-index: 0;
+      animation: sparkleStar 2.5s infinite alternate;
+      will-change: opacity, transform;
+    }
+    @media (max-width: 600px) {
+      .starry-bg-star {
+        opacity: 0.45;
+        animation-duration: 2s;
+      }
+    }
+
+    @keyframes sparkleStar {
+      0% {
+        opacity: 0.3;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.25);
+      }
+
+      100% {
+        opacity: 0.3;
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.1rem;
+      }
+
+      p {
+        font-size: 1rem;
+        padding: 1rem 0.7rem;
+      }
+
+      .theme-buttons {
+        flex-direction: column;
+        gap: 0.7rem;
+        align-items: stretch;
+      }
+
+      .theme-buttons button {
+        font-size: 1rem;
+        padding: 0.7rem 0;
+        width: 100%;
+        min-width: 0;
+      }
+
+      .footer {
+        font-size: 0.8rem;
+        padding: 0.5rem 0.7rem;
+      }
+
+      body {
+        padding: 0.7rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <div class="splash">Iqra’s Birthday Universe Loading ✨</div>
+  <div class="splash">Iqra’s Birthday Universe Loading ✨</div>
+  <div id="starry-bg"></div>
+  <div id="bg-fade-1" class="bg-fade active"></div>
+  <div id="bg-fade-2" class="bg-fade"></div>
 
-    <div class="starry-night" aria-hidden="true">
-        <div class="star small drift1" style="top: 10%; left: 15%; animation-delay: 0s"></div>
-        <div class="star medium drift2" style="top: 20%; left: 40%; animation-delay: 1.2s"></div>
-        <div class="star small drift3" style="top: 35%; left: 80%; animation-delay: 0.7s"></div>
-        <div class="star large drift4" style="top: 50%; left: 55%; animation-delay: 0.3s"></div>
-        <div class="star small drift1" style="top: 65%; left: 25%; animation-delay: 1.5s"></div>
-        <div class="star medium drift2" style="top: 75%; left: 75%; animation-delay: 2s"></div>
-        <div class="star small drift3" style="top: 85%; left: 60%; animation-delay: 1.8s"></div>
-        <div class="star large drift4" style="top: 90%; left: 30%; animation-delay: 2.1s"></div>
-        <div class="star medium drift1" style="top: 12%; left: 85%; animation-delay: 0.9s"></div>
-        <div class="star small drift2" style="top: 45%; left: 70%; animation-delay: 1.1s"></div>
-        <div class="star large drift3" style="top: 25%; left: 50%; animation-delay: 0.6s"></div>
-        <div class="star medium drift4" style="top: 38%; left: 20%; animation-delay: 0.4s"></div>
-        <div class="star small drift1" style="top: 58%; left: 35%; animation-delay: 0.7s"></div>
-        <div class="star medium drift2" style="top: 68%; left: 45%; animation-delay: 1.3s"></div>
-        <div class="star small drift3" style="top: 78%; left: 90%; animation-delay: 1.9s"></div>
+  <h1>Happy Birthday, Iqra! 🎂</h1>
+  <p>
+    In English we say <strong>Happy Birthday</strong> but in Urdu:<br />
+    <em>Woh roshan charagh 🕯️ jiske aamad ne sara jahan ✨ roshan kar diya — uske youm-e-pedaish 🎉 par por-khuloos
+      mubarakbaad 💐 pesh hai, jo waqayi mein ek jahaan araa 🌍✨ shakhsiyat hai.</em>
+  </p>
 
-        <!-- Shooting stars -->
-        <div id="shooting-star-1" class="shooting-star"></div>
-        <div id="shooting-star-2" class="shooting-star"></div>
-    </div>
+  <div class="theme-buttons">
+    <button onclick="setTheme('pink')">Neon Pink</button>
+    <button onclick="setTheme('aqua')">Aqua Blue</button>
+    <button onclick="setTheme('sunset')">Sunset Orange</button>
+    <button onclick="setTheme('midnight')">Midnight Purple</button>
+  </div>
 
-    <div class="main-content">
-        <h1>Happy Birthday, Iqra! 🎂</h1>
-        <p>
-            In English we say <strong>Happy Birthday</strong> but in Urdu:<br />
-            <em>Woh roshan charagh 🕯️ jiske aamad ne sara jahan ✨ roshan kar diya — uske youm-e-pedaish 🎉 par
-                por-khuloos mubarakbaad 💐 pesh hai, jo waqayi mein ek jahaan araa 🌍✨ shakhsiyat hai.</em>
-        </p>
+  <div class="footer">Made with 💖 by Janan</div>
 
-        <div class="theme-buttons" aria-label="Theme color switcher">
-            <button onclick="setTheme('pink')">Neon Pink</button>
-            <button onclick="setTheme('aqua')">Aqua Blue</button>
-            <button onclick="setTheme('sunset')">Sunset Orange</button>
-            <button onclick="setTheme('midnight')">Midnight Purple</button>
-        </div>
+  <script>
+    let currentBg = 1;
+    function setTheme(theme) {
+      const root = document.documentElement;
+      let bg1 = document.getElementById('bg-fade-1');
+      let bg2 = document.getElementById('bg-fade-2');
+      let nextBg = currentBg === 1 ? bg2 : bg1;
+      let prevBg = currentBg === 1 ? bg1 : bg2;
+      let bgGradient, textColor, shadowColor;
+      switch (theme) {
+        case 'pink':
+          bgGradient = 'radial-gradient(circle at top left, #1a001a, #330033)';
+          textColor = '#ff66cc';
+          shadowColor = '#ff99cc';
+          break;
+        case 'aqua':
+          bgGradient = 'radial-gradient(circle at top left, #003333, #00cccc)';
+          textColor = '#00ffff';
+          shadowColor = '#66ffff';
+          break;
+        case 'sunset':
+          bgGradient = 'radial-gradient(circle at top left, #330000, #ff6600)';
+          textColor = '#ffcc00';
+          shadowColor = '#ff9966';
+          break;
+        case 'midnight':
+          bgGradient = 'radial-gradient(circle at top left, #00001a, #330066)';
+          textColor = '#cc99ff';
+          shadowColor = '#9999ff';
+          break;
+      }
+      // Set next background
+      nextBg.style.background = bgGradient;
+      nextBg.classList.add('active');
+      prevBg.classList.remove('active');
+      // Animate crossfade
+      setTimeout(() => {
+        prevBg.style.background = bgGradient;
+        prevBg.classList.remove('active');
+        nextBg.classList.add('active');
+        currentBg = currentBg === 1 ? 2 : 1;
+      }, 900);
+      // Set text and shadow colors
+      root.style.setProperty('--text-color', textColor);
+      root.style.setProperty('--shadow-color', shadowColor);
+      // Also update CSS variable for fallback
+      root.style.setProperty('--bg-gradient', bgGradient);
+    }
 
-        <div class="footer">Made with 💖 by  Janan</div>
-    </div>
+    // Sparkling stars background
+    function createStarryBg() {
+      const starryBg = document.getElementById('starry-bg');
+      // Reduce number of stars on mobile for performance
+      const isMobile = window.innerWidth <= 600;
+      const starCount = isMobile ? 18 : 40;
+      for (let i = 0; i < starCount; i++) {
+        const star = document.createElement('div');
+        star.className = 'starry-bg-star';
+        // Random size
+        const size = Math.random() * 2.2 + 1.2;
+        star.style.width = size + 'px';
+        star.style.height = size + 'px';
+        // Random position
+        star.style.top = Math.random() * 100 + 'vh';
+        star.style.left = Math.random() * 100 + 'vw';
+        // Random animation delay
+        star.style.animationDelay = (Math.random() * 2.5) + 's';
+        starryBg.appendChild(star);
+      }
+    }
+    createStarryBg();
 
-    <script>
-        function setTheme(theme) {
-            const root = document.documentElement;
-            switch (theme) {
-                case 'pink':
-                    root.style.setProperty('--bg-gradient', 'radial-gradient(circle at top left, #1a001a, #330033)');
-                    root.style.setProperty('--text-color', '#ff66cc');
-                    root.style.setProperty('--shadow-color', '#ff99cc');
-                    break;
-                case 'aqua':
-                    root.style.setProperty('--bg-gradient', 'radial-gradient(circle at top left, #003333, #00cccc)');
-                    root.style.setProperty('--text-color', '#00ffff');
-                    root.style.setProperty('--shadow-color', '#66ffff');
-                    break;
-                case 'sunset':
-                    root.style.setProperty('--bg-gradient', 'radial-gradient(circle at top left, #330000, #ff6600)');
-                    root.style.setProperty('--text-color', '#ffcc00');
-                    root.style.setProperty('--shadow-color', '#ff9966');
-                    break;
-                case 'midnight':
-                    root.style.setProperty('--bg-gradient', 'radial-gradient(circle at top left, #00001a, #330066)');
-                    root.style.setProperty('--text-color', '#cc99ff');
-                    root.style.setProperty('--shadow-color', '#9999ff');
-                    break;
-            }
-        }
-
-        window.addEventListener('DOMContentLoaded', () => {
-            // Hide splash after 3 seconds
-            setTimeout(() => {
-                document.querySelector('.splash').style.display = 'none';
-            }, 3000);
-
-            // Shooting stars logic
-            const star1 = document.getElementById('shooting-star-1');
-            const star2 = document.getElementById('shooting-star-2');
-
-            const shootingDuration = 8000; // 8 seconds animation per star
-            let currentStar = 1;
-
-            function getRandomStart() {
-                // Returns a random starting top and left percentage for shooting star (off screen to right top area)
-                return {
-                    top: (5 + Math.random() * 30) + '%',
-                    left: (100 + Math.random() * 20) + '%',
-                };
-            }
-
-            function animateStar(star) {
-                const start = getRandomStart();
-                star.style.top = start.top;
-                star.style.left = start.left;
-                star.style.opacity = '1';
-
-                star.style.animation = 'none';
-                star.offsetHeight; // trigger reflow
-                star.style.animation = `shooting${star.id.endsWith('1') ? '1' : '2'} ${shootingDuration}ms linear forwards`;
-
-                setTimeout(() => {
-                    star.style.opacity = '0';
-                    star.style.animation = 'none';
-                    // Switch to next star
-                    currentStar = currentStar === 1 ? 2 : 1;
-                    animateStar(currentStar === 1 ? star1 : star2);
-                }, shootingDuration);
-            }
-
-            animateStar(star1);
-        });
-    </script>
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        document.querySelector('.splash').style.display = 'none';
+      }, 3000);
+    });
+  </script>
 </body>
 
 </html>
