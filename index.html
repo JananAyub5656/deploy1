@@ -2,397 +2,399 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy Birthday Iqra 🎉</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap"
-    rel="stylesheet">
-  <style>
-    :root {
-      --bg-gradient: radial-gradient(circle at top left, #1a001a, #330033);
-      --text-color: #ff66cc;
-      --shadow-color: #ff99cc;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday Iqra 🎉</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap"
+        rel="stylesheet" />
+    <style>
+        html {
+            box-sizing: border-box;
+            font-size: 16px
+        }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit
+        }
 
-    html {
-      scroll-behavior: smooth;
-      -webkit-tap-highlight-color: transparent;
-    }
+        body {
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%, #6a11cb 100%);
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            transition: background 1s;
+            position: relative;
+            overflow: hidden
+        }
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: var(--bg-gradient);
-      color: var(--text-color);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
-      overflow: hidden;
-      position: relative;
-      transition: color 0.5s ease;
-      touch-action: manipulation;
-      -webkit-user-select: none;
-      user-select: none;
-      -webkit-tap-highlight-color: transparent;
-      will-change: transform, filter;
-      backface-visibility: hidden;
-      contain: layout style;
-    }
+        .splash {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            flex-direction: column;
+            transition: opacity 1s;
+            animation: fadeSplash 3.2s forwards
+        }
 
-    /* Crossfade background for smooth theme transitions */
-    .bg-fade {
-      position: fixed;
-      inset: 0;
-      z-index: -2;
-      pointer-events: none;
-      transition: opacity 0.9s cubic-bezier(.7,0,.3,1);
-      opacity: 0;
-      background: var(--bg-gradient);
-    }
-    .bg-fade.active {
-      opacity: 1;
-    }
+        .splash-message {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.2rem;
+            color: #fff;
+            text-shadow: 0 0 18px #00c6ff, 0 0 40px #fff;
+            letter-spacing: 2px;
+            text-align: center;
+            padding: 0 1rem;
+            opacity: 0;
+            transform: scale(.8) translateY(40px);
+            animation: splashZoomIn 1.2s .3s cubic-bezier(.23, .74, .61, 1.01) forwards
+        }
 
-    .splash {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #0f001a;
-      color: #ff66cc;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      z-index: 1000;
-      animation: fadeSplash 3s forwards;
-    }
+        .splash-stars {
+            font-size: 1.3rem;
+            margin-top: 1.2rem;
+            color: #00c6ff;
+            letter-spacing: .3em;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: splashSlideUp 1.1s .8s cubic-bezier(.23, .74, .61, 1.01) forwards
+        }
 
-    @keyframes fadeSplash {
-      0% {
-        opacity: 1;
-      }
+        @keyframes fadeSplash {
 
-      80% {
-        opacity: 1;
-      }
+            0%,
+            80% {
+                opacity: 1
+            }
 
-      100% {
-        opacity: 0;
-        visibility: hidden;
-      }
-    }
+            100% {
+                opacity: 0;
+                visibility: hidden
+            }
+        }
 
-    h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 3.5rem;
-      text-shadow:
-        0 0 10px var(--text-color),
-        0 0 20px var(--shadow-color),
-        2px 4px 0 #0006,
-        0 0 40px var(--text-color),
-        0 0 80px var(--shadow-color),
-        0 2px 8px #0008;
-      margin-bottom: 1rem;
-      animation: fadeInDown 1.5s ease forwards;
-    }
+        @keyframes splashZoomIn {
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0)
+            }
+        }
 
-    p {
-      font-size: 1.3rem;
-      margin: 1.5rem 0;
-      max-width: 800px;
-      line-height: 1.8;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--text-color);
-      border-radius: 20px;
-      padding: 1.5rem 2rem;
-      box-shadow: 0 0 20px var(--shadow-color), 0 8px 32px 0 #0007;
-      animation: fadeInUp 2s ease forwards;
-      color: #fff;
-      text-shadow:
-        0 0 6px var(--text-color),
-        0 0 16px var(--shadow-color),
-        1.5px 3px 0 #0005,
-        0 0 32px var(--text-color),
-        0 1.5px 6px #0007;
-    }
+        @keyframes splashSlideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
 
-    .footer {
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      color: #ccc;
-      background: rgba(0, 0, 0, 0.3);
-      padding: 0.5rem 1.5rem;
-      border-radius: 12px;
-      animation: fadeInUp 2.5s ease forwards;
-    }
+        .starry-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 2
+        }
 
-    .theme-buttons {
-      margin-top: 1.5rem;
-      display: flex;
-      justify-content: center;
-      gap: 1.2rem;
-    }
+        .star {
+            position: absolute;
+            border-radius: 50%;
+            background: #fff;
+            opacity: .7;
+            width: 2px;
+            height: 2px;
+            animation: twinkle 2.5s infinite ease-in-out alternate
+        }
 
-    .theme-buttons button {
-      margin: 0;
-      padding: 0.7rem 1.7rem;
-      background: linear-gradient(90deg, var(--text-color) 0%, var(--shadow-color) 100%);
-      border: none;
-      border-radius: 30px;
-      color: #fff;
-      font-size: 1.1rem;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 500;
-      letter-spacing: 1px;
-      box-shadow: 0 2px 16px 0 var(--shadow-color), 0 1.5px 0 0 #fff2 inset, 0 6px 24px 0 #0003;
-      cursor: pointer;
-      transition: background 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s, filter 0.2s;
-      outline: none;
-      position: relative;
-      overflow: hidden;
-      filter: drop-shadow(0 2px 8px var(--shadow-color)) drop-shadow(0 0 2px #fff8);
-      will-change: transform, box-shadow, filter;
-      user-select: none;
-      touch-action: manipulation;
-      pointer-events: auto;
-      min-height: 48px;
-      min-width: 120px;
-      tap-highlight-color: transparent;
-      -webkit-tap-highlight-color: transparent;
-      /* Remove duplicate tap-highlight-color property */
-      /* Remove duplicate touch-action property */
-      /* Remove non-standard tap-highlight-color */
-      /* Remove duplicate user-select property */
-      /* Remove duplicate pointer-events property */
-      /* Remove duplicate min-height/min-width if present */
-      /* Remove duplicate font-variant-ligatures/font-feature-settings if present */
-    }
+        @keyframes twinkle {
 
-    .theme-buttons button::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 0;
-      height: 0;
-      background: rgba(255, 255, 255, 0.25);
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      transition: width 0.4s, height 0.4s;
-      z-index: 0;
-    }
+            0%,
+            100% {
+                opacity: .3
+            }
 
-    .theme-buttons button:hover::before {
-      width: 220%;
-      height: 500%;
-    }
+            50% {
+                opacity: 1
+            }
+        }
 
-    .theme-buttons button:hover {
-      color: var(--text-color);
-      background: #fff;
-      transform: translateY(-4px) scale(1.07) rotate(-2deg);
-      box-shadow: 0 4px 32px 0 var(--shadow-color), 0 2px 0 0 #fff2 inset;
-    }
+        .shooting-star {
+            position: fixed;
+            width: 3px;
+            height: 90px;
+            background: linear-gradient(45deg, #fff, rgba(255, 255, 255, 0));
+            border-radius: 50%;
+            filter: drop-shadow(0 0 8px #fff);
+            transform: rotate(45deg);
+            opacity: 0;
+            pointer-events: none;
+            z-index: 3;
+            animation: shooting 4s linear forwards
+        }
 
-    .theme-buttons button:focus-visible {
-      outline: 2.5px solid var(--text-color);
-      outline-offset: 2px;
-      box-shadow: 0 0 0 4px var(--shadow-color), 0 2px 16px 0 var(--shadow-color);
-      filter: brightness(1.1) drop-shadow(0 0 8px var(--text-color));
-      transition: none;
-    }
+        @keyframes shooting {
+            0% {
+                opacity: 0;
+                transform: translateX(0) translateY(0) rotate(45deg)
+            }
 
-    .theme-buttons button:active {
-      transform: scale(0.97) translateY(1.5px);
-      filter: brightness(0.97) drop-shadow(0 0 8px var(--shadow-color));
-      transition: none;
-    }
+            10% {
+                opacity: 1
+            }
 
-    .theme-buttons button:focus:not(:focus-visible) {
-      outline: none;
-    }
+            80% {
+                opacity: 1;
+                transform: translateX(-120vw) translateY(120vh) rotate(45deg)
+            }
 
-    /* Sparkling star background - optimized for mobile */
-    .starry-bg-star {
-      position: fixed;
-      border-radius: 50%;
-      background: white;
-      opacity: 0.6;
-      pointer-events: none;
-      z-index: 0;
-      animation: sparkleStar 2.5s infinite alternate;
-      will-change: opacity, transform;
-    }
-    @media (max-width: 600px) {
-      .starry-bg-star {
-        opacity: 0.45;
-        animation-duration: 2s;
-      }
-    }
+            100% {
+                opacity: 0;
+                transform: translateX(-120vw) translateY(120vh) rotate(45deg)
+            }
+        }
 
-    @keyframes sparkleStar {
-      0% {
-        opacity: 0.3;
-        transform: scale(1);
-      }
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1.2rem;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 2;
+            padding: 0 .5rem;
+            overflow: hidden;
+            animation: headerFloat 3.5s ease-in-out infinite alternate
+        }
 
-      50% {
-        opacity: 1;
-        transform: scale(1.25);
-      }
+        @keyframes headerFloat {
+            0% {
+                transform: translateY(0)
+            }
 
-      100% {
-        opacity: 0.3;
-        transform: scale(1);
-      }
-    }
+            100% {
+                transform: translateY(-10px)
+            }
+        }
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2.1rem;
-      }
+        .wish-container {
+            background: var(--box-bg);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(20, 30, 48, .25), 0 0 0 4px #00c6ff;
+            padding: 2rem 1.2rem;
+            max-width: 95vw;
+            width: 400px;
+            margin: 0 auto 1.5rem auto;
+            border: 2px solid var(--box-border);
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+            animation: borderGlow 2.5s 2s infinite alternate, boxFloat 4s ease-in-out infinite alternate
+        }
 
-      p {
-        font-size: 1rem;
-        padding: 1rem 0.7rem;
-      }
+        @keyframes borderGlow {
+            0% {
+                box-shadow: 0 8px 32px 0 rgba(20, 30, 48, .25), 0 0 0 4px #00c6ff
+            }
 
-      .theme-buttons {
-        flex-direction: column;
-        gap: 0.7rem;
-        align-items: stretch;
-      }
+            100% {
+                box-shadow: 0 8px 32px 0 rgba(20, 30, 48, .25), 0 0 16px 8px #00c6ff66
+            }
+        }
 
-      .theme-buttons button {
-        font-size: 1rem;
-        padding: 0.7rem 0;
-        width: 100%;
-        min-width: 0;
-      }
+        @keyframes boxFloat {
+            0% {
+                transform: translateY(0)
+            }
 
-      .footer {
-        font-size: 0.8rem;
-        padding: 0.5rem 0.7rem;
-      }
+            100% {
+                transform: translateY(12px)
+            }
+        }
 
-      body {
-        padding: 0.7rem;
-      }
-    }
-  </style>
+        .wish-container::before {
+            content: "";
+            position: absolute;
+            top: -40px;
+            left: -40px;
+            width: 90px;
+            height: 90px;
+            background: radial-gradient(circle, #00c6ff 0%, transparent 70%);
+            opacity: .3;
+            z-index: 0
+        }
+
+        .wish-container::after {
+            content: "";
+            position: absolute;
+            bottom: -40px;
+            right: -40px;
+            width: 90px;
+            height: 90px;
+            background: radial-gradient(circle, #232526 0%, transparent 70%);
+            opacity: .2;
+            z-index: 0
+        }
+
+        .wish-text {
+            position: relative;
+            z-index: 1;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #fff;
+            text-align: center;
+            animation: wishFadeIn 1.2s 1.2s both
+        }
+
+        @keyframes wishFadeIn {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .wish-urdu {
+            display: block;
+            margin-top: 1.1rem;
+            font-size: 1rem;
+            font-style: italic;
+            color: var(--accent-color);
+            letter-spacing: .5px;
+            animation: urduGlow 2.5s 2.2s infinite alternate
+        }
+
+        @keyframes urduGlow {
+            0% {
+                text-shadow: 0 0 8px #00c6ff
+            }
+
+            100% {
+                text-shadow: 0 0 18px #fff, 0 0 24px #00c6ff
+            }
+        }
+
+        .footer {
+            margin-top: 1.5rem;
+            font-size: .95rem;
+            color: var(--footer-color);
+            text-shadow: 0 0 8px #232526;
+            letter-spacing: 1px;
+            z-index: 2;
+            opacity: 1;
+            animation: footerFade 2.2s 2.2s both, footerFloat 4s ease-in-out infinite alternate, footerGlow 2.5s 3.5s infinite alternate
+        }
+
+        @keyframes footerFade {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes footerFloat {
+            0% {
+                transform: translateY(0)
+            }
+
+            100% {
+                transform: translateY(-10px)
+            }
+        }
+
+        @keyframes footerGlow {
+            0% {
+                text-shadow: 0 0 8px #232526
+            }
+
+            100% {
+                text-shadow: 0 0 18px #00c6ff, 0 0 24px #fff
+            }
+        }
+
+        @media (max-width:600px) {
+            html {
+                font-size: 15px
+            }
+
+            .splash-message {
+                font-size: 1.3rem;
+                padding: 0 .5rem
+            }
+
+            .splash-stars {
+                font-size: 1rem
+            }
+
+            h1 {
+                font-size: 1.5rem;
+                margin-bottom: .8rem
+            }
+
+            .wish-container {
+                padding: 1.1rem .5rem;
+                width: 98vw;
+                max-width: 98vw;
+                border-radius: 14px
+            }
+
+            .wish-text {
+                font-size: .98rem
+            }
+
+            .wish-urdu {
+                font-size: .92rem
+            }
+
+            .footer {
+                font-size: .85rem;
+                margin-top: 1rem
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <div class="splash">Iqra’s Birthday Universe Loading ✨</div>
-  <div id="starry-bg"></div>
-  <div id="bg-fade-1" class="bg-fade active"></div>
-  <div id="bg-fade-2" class="bg-fade"></div>
-
-  <h1>Happy Birthday, Iqra! 🎂</h1>
-  <p>
-    In English we say <strong>Happy Birthday</strong> but in Urdu:<br />
-    <em>Woh roshan charagh 🕯️ jiske aamad ne sara jahan ✨ roshan kar diya — uske youm-e-pedaish 🎉 par por-khuloos
-      mubarakbaad 💐 pesh hai, jo waqayi mein ek jahaan araa 🌍✨ shakhsiyat hai.</em>
-  </p>
-
-  <div class="theme-buttons">
-    <button onclick="setTheme('pink')">Neon Pink</button>
-    <button onclick="setTheme('aqua')">Aqua Blue</button>
-    <button onclick="setTheme('sunset')">Sunset Orange</button>
-    <button onclick="setTheme('midnight')">Midnight Purple</button>
-  </div>
-
-  <div class="footer">Made with 💖 by Janan</div>
-
-  <script>
-    let currentBg = 1;
-    function setTheme(theme) {
-      const root = document.documentElement;
-      let bg1 = document.getElementById('bg-fade-1');
-      let bg2 = document.getElementById('bg-fade-2');
-      let nextBg = currentBg === 1 ? bg2 : bg1;
-      let prevBg = currentBg === 1 ? bg1 : bg2;
-      let bgGradient, textColor, shadowColor;
-      switch (theme) {
-        case 'pink':
-          bgGradient = 'radial-gradient(circle at top left, #1a001a, #330033)';
-          textColor = '#ff66cc';
-          shadowColor = '#ff99cc';
-          break;
-        case 'aqua':
-          bgGradient = 'radial-gradient(circle at top left, #003333, #00cccc)';
-          textColor = '#00ffff';
-          shadowColor = '#66ffff';
-          break;
-        case 'sunset':
-          bgGradient = 'radial-gradient(circle at top left, #330000, #ff6600)';
-          textColor = '#ffcc00';
-          shadowColor = '#ff9966';
-          break;
-        case 'midnight':
-          bgGradient = 'radial-gradient(circle at top left, #00001a, #330066)';
-          textColor = '#cc99ff';
-          shadowColor = '#9999ff';
-          break;
-      }
-      // Set next background
-      nextBg.style.background = bgGradient;
-      nextBg.classList.add('active');
-      prevBg.classList.remove('active');
-      // Animate crossfade
-      setTimeout(() => {
-        prevBg.style.background = bgGradient;
-        prevBg.classList.remove('active');
-        nextBg.classList.add('active');
-        currentBg = currentBg === 1 ? 2 : 1;
-      }, 900);
-      // Set text and shadow colors
-      root.style.setProperty('--text-color', textColor);
-      root.style.setProperty('--shadow-color', shadowColor);
-      // Also update CSS variable for fallback
-      root.style.setProperty('--bg-gradient', bgGradient);
-    }
-
-    // Sparkling stars background
-    function createStarryBg() {
-      const starryBg = document.getElementById('starry-bg');
-      // Reduce number of stars on mobile for performance
-      const isMobile = window.innerWidth <= 600;
-      const starCount = isMobile ? 18 : 40;
-      for (let i = 0; i < starCount; i++) {
-        const star = document.createElement('div');
-        star.className = 'starry-bg-star';
-        // Random size
-        const size = Math.random() * 2.2 + 1.2;
-        star.style.width = size + 'px';
-        star.style.height = size + 'px';
-        // Random position
-        star.style.top = Math.random() * 100 + 'vh';
-        star.style.left = Math.random() * 100 + 'vw';
-        // Random animation delay
-        star.style.animationDelay = (Math.random() * 2.5) + 's';
-        starryBg.appendChild(star);
-      }
-    }
-    createStarryBg();
-
-    window.addEventListener('DOMContentLoaded', () => {
-      setTimeout(() => {
-        document.querySelector('.splash').style.display = 'none';
-      }, 3000);
-    });
-  </script>
+    <div class="splash" id="splash">
+        <div class="splash-message">Iqra’s Birthday Universe Loading ✨</div>
+        <div class="splash-stars">★ ✦ ✧ ✦ ★</div>
+    </div>
+    <div class="starry-bg" id="starry-bg"></div>
+    <div class="shooting-star" id="shooting-star"></div>
+    <h1>Happy Birthday, Iqra! 🎂</h1>
+    <div class="wish-container">
+        <div class="wish-text">
+            In English we say <strong>Happy Birthday</strong> but in Urdu:
+            <span class="wish-urdu">
+                Woh roshan charagh jiske aamad ne sara jahan roshan kar diya — uske youm-e-pedaish par por-khuloos
+                mubarakbaad pesh hai, jo waqayi mein ek jahaan araa shakhsiyat hai.
+            </span>
+        </div>
+    </div>
+    <div class="footer">Made with 💙 by Janan</div>
+    <script
+        defer>(function () { window.addEventListener('DOMContentLoaded', function () { setTimeout(function () { document.getElementById('splash').style.display = 'none' }, 3200) }); var starryBg = document.getElementById('starry-bg'), numStars = 80; for (var i = 0; i < numStars; i++) { var star = document.createElement('div'); star.className = 'star'; var size = Math.random() * 2 + 1; star.style.width = size + 'px'; star.style.height = size + 'px'; star.style.top = Math.random() * 100 + '%'; star.style.left = Math.random() * 100 + '%'; star.style.animationDuration = 2 + Math.random() * 2 + 's'; starryBg.appendChild(star) } var shootingStar = document.getElementById('shooting-star'); function launchShootingStar() { var startTop = Math.random() * 30 + 5, startLeft = Math.random() * 30 + 65; shootingStar.style.top = startTop + '%'; shootingStar.style.left = startLeft + '%'; shootingStar.style.opacity = '1'; shootingStar.style.animation = 'none'; shootingStar.offsetHeight; shootingStar.style.animation = 'shooting 4s linear forwards'; setTimeout(function () { shootingStar.style.opacity = '0'; shootingStar.style.animation = 'none'; setTimeout(launchShootingStar, 2e3 + Math.random() * 3e3) }, 4e3) } setTimeout(launchShootingStar, 1e3) })();</script>
 </body>
 
 </html>
